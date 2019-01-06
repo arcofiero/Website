@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="shortcut icon" href="https://photos.app.goo.gl/An7xfbhSVBXbrC1v7" >
+
+
+    <title>Archit's Website</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    
+    <link href="css/creative.min.css" rel="stylesheet">
+<!-- Social media-->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<!-- Scoail media trial 2 -->
+    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Social media trial 2 ends-->
+  </head>
+
+  <body id="page-top">
+
+
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#Codenomics">Codenomics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>Welcome<br> to <br>Archit's E-Portfolio</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">Hi there!</p>
+            <p class="text-faded mb-5">I'm Archit, nice to meet you...</p>
+            <p class="text-faded mb-5">My biggest hobby is coding, and I'm nurturing myself in the environmnet of ISU as web-software coding since I first started my language coding experience.</p>
+
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">To Find Out More</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+   
+<div id="container">
+<canvas id="canvas" width="1920px"></canvas></div>
+
+ <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">An intro with least time...</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">I'm a computer software developer, and currently I'm doing my Bachelors in Science in Computer Science and Management in Information System from Iowa State University.</p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#Codenomics">Codenomics...wait what?!?</a><br>
+          </div>
+        </div>
+      </div>
+
+
+<style type="text/css"> 
+ 
+#canvas{
+  background-color:black;
+  display:block;
+  margin:auto;
+  width:100%;
+  height: 50%;
+
+}
+</style>
+
+<script type="text/javascript">
+  
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var t = text();
+var lines = [];
+window.setInterval(draw, 50);
+
+function draw() {
+  if (Math.floor(Math.random() * 2) === 0 && lines.length < 100) {
+    lines.push(new textLine());
+  }
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  lines.forEach(function(tl) {
+
+    ctx.drawImage(tl.text, tl.posX, tl.animate(), 20, 1000);
+  });
+
+}
+
+function textLine() {
+  this.text = t;
+  this.posX = (function() {
+    return Math.floor(Math.random() * canvas.width);
+  })();
+  this.offsetY = -1000;
+  this.animate = function() {
+    if (this.offsetY >= 0) {
+      this.offsetY = -1000;
+    }
+    this.offsetY += 10;
+    return this.offsetY;
+  };
+}
+
+function text() {
+  var offscreenCanvas = document.createElement('canvas');
+  offscreenCanvas.width = "30";
+  offscreenCanvas.height = "1000";
+  offscreenCanvas.style.display = "none";
+  document.body.appendChild(offscreenCanvas);
+  var octx = offscreenCanvas.getContext('2d');
+  octx.textAlign = "center";
+  octx.shadowColor = "lightgreen";
+  octx.shadowOffsetX = 2;
+  octx.shadowOffsetY = -5;
+  octx.shadowBlur = 1;
+  octx.fillStyle = 'darkgreen';
+  octx.textAlign = "left";
+  var step = 10;
+  for (i = 0; i < 100; i++) {
+    var charCode = 0;
+    while (charCode < 60) {
+      charCode = Math.floor(Math.random() * 100);
+    }
+    octx.fillText(String.fromCharCode(charCode), 0, step);
+    step += 10;
+  }
+  return offscreenCanvas;
+}
+</script>
+    </section>
+
+
+
+    <section id="Codenomics">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Codenomics</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-html5 text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">HTML5</h3>
+              <p class="text-muted mb-0"> </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-css3 text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">CSS3</h3>
+           <!--    <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p> -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-code text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Java and Java Script</h3>
+            <!--   <p class="text-muted mb-0">We update dependencies to keep things fresh.</p> -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-space-shuttle text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">SQL</h3>
+              <!-- <p class="text-muted mb-0">You have to make your websites with love these days!</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="p-0" id="portfolio">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Artifical Intelligence
+                  </div>
+                  <div class="project-name">
+                    Deep Machine Learning through R-Prog
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    E-Portfolio
+                  </div>
+                  <div class="project-name">
+                    Front end Web development
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Core Java Development
+                  </div>
+                  <div class="project-name">
+                   Projects based on data structure alogrithm
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                   AIESEC GLOBAL INTERN
+                  </div>
+                  <div class="project-name">
+                   Web development and some volunteering projects
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Solo Traveling
+                  </div>
+                  <div class="project-name">
+                    Russia, India, Nepal, China, USA, and Brasil
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </section>
+
+    <section class="bg-dark text-white">
+      <div class="container text-center">
+        <h2 class="mb-4">Social media</h2><br>
+       
+      </div>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <ul class="socialIcons">
+       <li class="facebook"><a href="https://www.facebook.com/raj.archit10"><i class="fa fa-fw fa-facebook"></i>Facebook</a></li> 
+       <li class="twitter"><a href="https://twitter.com/rajarc10"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li> 
+       <li class="linkedin"><a href="https://www.linkedin.com/in/architrajisu/"><i class="fa fa-fw fa-linkedin-square"></i>LinkedIn</a></li> 
+       <li class="github"><a href="https://github.com/rajarc7"><i class="fa fa-fw fa-github"></i>Github</a></li> 
+       <!-- <li class="steam"><a href="#"><i class="fa fa-fw fa-steam"></i>Steam</a></li>  -->
+    </ul>
+    <style type="text/css">
+      
+
+  
+ul.socialIcons {
+    padding: 0;
+    text-align: center;
+}
+.socialIcons li {
+    background: yellow;
+    list-style: none;
+    display: inline-block;
+    margin: 15px;
+    border-radius: 3em;
+    overflow:hidden;
+}
+.socialIcons li a {
+    display: block;
+    padding: .5em;
+    max-width: 2.3em;
+    min-width: 2.3em;
+    height: 2.3em;
+    white-space: nowrap;
+    line-height: 1.5em;
+    transition:0.5s;
+    text-decoration: none;
+    font-family: arial;
+    color: #fff;
+}
+.socialIcons li i {
+    margin-right:.5em;
+}
+.socialIcons li:hover a {
+    max-width:200px;
+    padding-right:1em;
+}
+.socialIcons .facebook {
+    background: #3b5998;
+    box-shadow: 0 0 16px #3b5998;
+}
+.socialIcons .twitter {
+    background: #00aced;
+    box-shadow: 0 0 16px #00aced;
+}
+.socialIcons .linkedin {
+    background: #0077B5;
+    box-shadow: 0 0 16px #00A0DC;
+}
+.socialIcons .github {
+    background: #999;
+    box-shadow: 0 0 16px #999;
+}
+
+    </style>
+</div>
+ </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading"><strong>Don't hesitate to contact me</strong></h2>
+            <hr class="my-4">
+            <p class="mb-5"> <p>I like people who like to express themselves,<br> so always remember that I'm just an e-mail or call away!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p> <a href="tel:+1(515)-715-3899">+1(515)-715-3899</a></p>
+
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto: araj2210@gmail.com">For any feedback!</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+ 
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+  </body>
+
+</html>
